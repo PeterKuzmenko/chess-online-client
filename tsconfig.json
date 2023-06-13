@@ -1,0 +1,63 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "jsx": "react-jsx",
+    "noImplicitAny": true,
+    "noStrictGenericChecks": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "noImplicitReturns": false,
+    "moduleResolution": "node",
+    "module": "esnext",
+    "target": "es6",
+    "lib": [
+      "es2015",
+      "es2017",
+      "dom",
+      "dom.iterable",
+      "es2019"
+    ],
+    "sourceMap": true,
+    "baseUrl": ".",
+    "strict": true,
+    "paths": {
+      "assets/*": [
+        "src/assets/*"
+      ],
+      "store": [
+        "src/store"
+      ],
+      "store/*": [
+        "src/store/*"
+      ],
+      "styles/*": [
+        "src/styles/*"
+      ],
+      "utils/*": [
+        "src/utils/*"
+      ],
+      "pages/*": [
+        "src/pages/*"
+      ],
+      "components/*": [
+        "src/components/*"
+      ],
+      "api/*": [
+        "src/api/*"
+      ],
+      "api": [
+        "src/api"
+      ],
+      "types": [
+        "src/types"
+      ]
+    }
+  },
+  "exclude": [
+    "**/node_modules/**"
+  ]
+}
