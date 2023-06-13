@@ -83,6 +83,7 @@ const ChessBoard: FC<ChessBoardProps> = ({
         renderBoard(context, board, selectedCell, lastMove, opposite);
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedCell, board]);
 
   return (
