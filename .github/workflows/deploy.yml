@@ -1,5 +1,8 @@
 name: Build and deploy to GitHub Pages
 
+permissions:
+  contents: write
+
 on:
   push:
     branches: [master]
@@ -21,4 +24,3 @@ jobs:
         with:
           branch: gh-pages
           folder: build
-          token: ${{ secrets.GH_TOKEN }}
