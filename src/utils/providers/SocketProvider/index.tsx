@@ -1,6 +1,7 @@
 import { createContext, FC, PropsWithChildren, useContext, useEffect, useMemo } from 'react';
 import { useAuthContext } from 'utils/providers/AuthProvider';
 import io, { Socket } from 'socket.io-client';
+import { API_URL } from 'api';
 
 type SocketContextType = {
   socket: Socket | null;
@@ -16,7 +17,7 @@ const SocketProvider: FC<PropsWithChildren> = ({ children }) => {
     if (userId) {
       const token = localStorage.getItem('token');
 
-      return io(`http://${window.location.hostname}:8000`, {
+      return io(API_URL, {
         query: { token },
       });
     }
