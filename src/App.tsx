@@ -16,7 +16,7 @@ const App: FC = () => (
   <AuthContextProvider>
     <UserInfoContextProvider>
       <SocketProvider>
-        <Router>
+        <Router basename="/chess-online-client">
           <TopPanel />
 
           <Routes>
