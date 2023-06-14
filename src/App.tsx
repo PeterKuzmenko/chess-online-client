@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 import SocketProvider from 'utils/providers/SocketProvider';
 import AuthContextProvider from 'utils/providers/AuthProvider';
@@ -16,7 +16,7 @@ const App: FC = () => (
   <AuthContextProvider>
     <UserInfoContextProvider>
       <SocketProvider>
-        <Router>
+        <HashRouter>
           <TopPanel />
 
           <Routes>
@@ -65,7 +65,7 @@ const App: FC = () => (
 
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
-        </Router>
+        </HashRouter>
       </SocketProvider>
     </UserInfoContextProvider>
   </AuthContextProvider>
