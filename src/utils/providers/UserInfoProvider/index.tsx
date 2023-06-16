@@ -12,9 +12,11 @@ type UserInfoContextType = {
 const UserInfoContext = createContext({} as UserInfoContextType);
 export const useUserInfoContext = () => useContext(UserInfoContext);
 
+const storedUserInfo: Player | null = JSON.parse(localStorage.getItem('userInfo') ?? 'null');
+
 const UserInfoContextProvider: FCWithChildren = ({ children }) => {
   const { userId, setUserId } = useAuthContext();
-  const [userInfo, setUserInfo] = useState<Player | null>(null);
+  const [userInfo, setUserInfo] = useState<Player | null>(storedUserInfo);
 
   const updateUserInfo = useCallback(
     (payload: Partial<Player>) => {
@@ -30,6 +32,8 @@ const UserInfoContextProvider: FCWithChildren = ({ children }) => {
 
     getPlayer(userId)
       .then(res => {
+        localStorage.setItem('userInfo', JSON.stringify(res.data));
+
         setUserInfo(res.data);
       })
       .catch(() => {

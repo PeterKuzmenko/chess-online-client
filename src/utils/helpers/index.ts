@@ -1,6 +1,6 @@
-import { API_URL } from 'api';
+import { SERVER_URL } from 'api';
 
-export const getImageUrl = (path?: string) => path && `${API_URL}${path}`;
+export const getImageUrl = (path?: string) => path && `${SERVER_URL}${path}`;
 
 export const toMMSS = (timeInMs: number) => {
   const totalSeconds = Math.floor(timeInMs / 1000);
